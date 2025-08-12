@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style_login.css">
+</head>
+<body>
+    <main class="main">
+        <section class="container">
+            <img src="../assets/img/logo_campus.png">
+            
+            <h1>Fazer Login</h1>
+        
+            <form action="../backend/auth/login.php" method="post">
+                    <!-- <label for="emailUser">Email:</label> -->
+                    <input type="email" id="emailUser" name="emailUser" placeholder="Digite seu E-mail" required>
+                
+                    <!-- <label for="senhaUser">Senha:</label> -->
+                    <input type="password" id="senhaUser" name="senhaUser" placeholder="Digite sua Senha" required>
+                    <button type="submit">Entrar</button>
+                    <p>Não possue um login? <a href="register.php"> Cadastre-se </a> agora</p>
+            </form>
+        </section>
+    </main>
+
+<script src="../assets/js/eventos.js"></script>
+</body>
+</html>

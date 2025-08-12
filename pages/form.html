@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+    body{
+        font-family: Inter, Arial;
+        margin:0;
+        background:#f7fbff;
+        color:#0b2b4a;
+    }
+    
+    header{
+        background:#0b59a8;
+        color:#fff;
+        padding:24px;
+        text-align:center;
+    }
+    .container{
+        max-width:1000px;
+        margin:24px auto;
+        padding:0 16px
+    }
+    .card{
+        background:#fff;
+        border-radius:10px;
+        padding:18px;
+        box-shadow:0 6px 18px rgba(11,41,74,0.06);
+        margin-bottom:18px
+    }
+    form input, form select{
+        width:100%;
+        padding:10px;
+        margin:8px 0;
+        border:1px solid #e6eefb;
+        border-radius:6px
+    }
+    button{
+        background:#0074d9;
+        color:#fff;
+        padding:10px 16px;
+        border-radius:8px;
+        border:none;
+        cursor:pointer
+    }
+    .layout {
+        display:grid;
+        grid-template-columns:1fr 380px;
+        gap:18px
+    }
+    @media(max-width:880px){ 
+        .layout{
+            grid-template-columns:1fr
+        } }
+    </style>
+</head>
+<body>
+    
+  <header><h1>Teste Formulário</h1></header>
+
+  <main class="container">
+    <div class="layout">
+      <!-- Coluna principal -->
+      <div>
+        <div class="card">
+          <h2>Cadastro</h2>
+          <form action="https://script.google.com/macros/s/AKfycbynCCMXNuphfooQw13b6CyHBS_csTQsv9TJDceM9HH_uQQX1GVqZO8ZIbD_0Tz0aocg8A/exec" method="POST" target="hidden_iframe">
+              
+            <input name="name" placeholder="Nome completo" required />
+            <input name="email" type="email" placeholder="Email" required />
+            <select name="faculdade" required>
+              <option value="">Escolha a faculdade</option>
+              <option>Engenharia</option>
+              <option>Direito</option>
+              <option>Administração</option>
+              <option>Ciência da Computação</option>
+            </select>
+            <label><input name="recebe_news" type="checkbox" value="Sim" /> Quero receber news</label>
+            <div style="margin-top:12px"><button type="submit">Cadastrar</button></div>
+          </form>
+          <iframe name="hidden_iframe" style="display:none;"></iframe>
+        </div>
+
+        <!-- você pode linkar para uma área de notícias separada; aqui só exemplo -->
+        <!-- <div class="card">
+          <h2>Últimas notícias</h2>
+          <ul id="newsList">
+            <li>Sem notícias - adicione conteúdo</li>
+          </ul>
+        </div> -->
+      </div>
+
+      <!-- Coluna lateral: Gráfico -->
+      <!-- <aside>
+        <div class="card">
+          <h3>Alunos por Faculdade</h3>
+          <canvas id="chart" width="380" height="300"></canvas>
+        </div>
+      </aside> -->
+    </div>
+  </main>
+  
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const WEBAPP = 'https://script.google.com/macros/s/SEU_WEBAPP_ID/exec';
+
+  // Pega stats e desenha gráfico
+  async function loadStats(){
+    try{
+      const res = await fetch(WEBAPP + '?action=stats');
+      const counts = await res.json(); // objeto {Engenharia:3, Direito:5, ...}
+      const labels = Object.keys(counts);
+      const data = Object.values(counts);
+
+      const ctx = document.getElementById('chart').getContext('2d');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: labels,
+          datasets: [{ data: data }]
+        },
+        options: { responsive:true, maintainAspectRatio:false }
+      });
+    } catch(err){
+      console.error('Erro ao carregar stats', err);
+    }
+  }
+  
+  loadStats();
+  document.querySelector('form').addEventListener('submit', e => {
+  setTimeout(() => e.target.reset(), 200);
+});
+
+</script>
+</body>
+</html>
+
+AKfycbynCCMXNuphfooQw13b6CyHBS_csTQsv9TJDceM9HH_uQQX1GVqZO8ZIbD_0Tz0aocg8A

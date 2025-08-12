@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background:#f7fbff;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color:#0b2b4a;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 20px 0px;
+    color:#0b2b4a;
+}
+
+main {
+    width: 100%;
+    /* height: 1300px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 50%;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow:0 6px 18px rgba(11,41,74,0.2);
+}
+
+.container img {
+    width: 15%;
+    padding: 5px;
+    border-radius: 100px;
+    border: 1px solid black;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+form {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color:#0b2b4a;
+}
+
+label {
+    margin: 8px 0px;
+    font-size: 1.4em;
+    display: block;
+}
+
+input {
+    width: 85%;
+    padding: 7px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: 1px solid rgb(48, 48, 48);
+}
+
+select {
+    width: 89%;
+    padding: 7px;
+    font-size: 1em;
+    border-radius: 10px;
+    border: 1px solid rgb(48, 48, 48);
+}
+
+button {
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(48, 48, 48);
+    margin: 30px 0px;
+    font-size: 1.4em;
+    background-color: #0b59a8;
+    color: #fff;
+}
+
+a>span {
+    color: #0b59a8;
+}
+
+#linkfim {
+    margin: 0px 0px 20px 0px;
+}
+
+/* Separando o Form em dois para desktop */
+.separandoForm {
+    width: 50%;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+
+}
+
+/* Animação container */
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide {
+  animation: slideIn 1s ease-out forwards;
+}
+
+@media (max-850px) {
+    .container {
+        width: 70%;
+    }
+
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    input {
+        width: 96%;
+    }
+
+    select {
+        width: 101%;
+    }
+
+    .separandoForm {
+        width: 100%;
+    }
+    
+    button {
+        width: 100%;
+        padding: 7px
+    }
+}

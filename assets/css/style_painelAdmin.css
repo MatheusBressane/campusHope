@@ -1,0 +1,290 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+/* Style Global */
+
+body {
+    font-family: Arial, sans-serif;
+    background:#f7fbff;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+h1 {
+    margin-left: 50px;
+}
+
+main {
+    width: 100%;
+    height: 1000px;
+}
+
+
+/* Style Header */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    background-color: #0b59a8;
+    padding: 10px 100px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.cabecalho a {
+    color: #fff;
+}
+
+.logo-campus {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.busca {
+    background-color: #364853;
+}
+
+.perfil {
+    display: flex;
+}
+
+.abrirPerfil {
+    display: none;
+}
+
+.perfil-opcao { 
+    list-style: none;
+}
+
+.perfil-opcao {
+    display: flex;
+    gap: 20px;
+}
+
+/* Style tabelas */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+thead {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+td:last-child {
+    height: 20px;
+}
+
+table td button {
+    background: none;
+    border: none;
+    font-size: 1em;
+}
+
+#promover {
+    color: blue;
+}
+
+#excluir {
+    color: red;
+}
+
+/* Escondendo caixas */
+
+.modalBusca {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.modal-content button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0px;
+    font-size: 1em;
+}
+
+.modal-content h2 {
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style Filtro */
+
+.filtro {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#formFiltros {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 100%;
+    padding: 5px;
+    font-size: 1em;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    margin: 0;
+    cursor: pointer;
+    color: black;
+    background-color: #fcfcfc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    z-index: 10;
+}
+
+#space-top {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    padding: 5px;
+    width: 90%;
+    /* margin-left: auto;
+    margin-right: auto; */
+    font-size: 1.1em;
+    margin: 3px auto;
+}
+
+#formFiltros>select {
+    display: block;
+    font-size: 1em;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+#formFiltros {
+    display: none;
+}
+
+#mostrarForm {
+    cursor: pointer;
+    margin-right: 100px;
+    font-size: 1.2em;
+}
+
+.btn-fechar {
+    display: block;
+    background-color: #293740;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    font-size: 1.1em;
+}
+
+/* Style Usuário não encontrado */
+
+#userNaoEncontrado {
+    margin-left: 50px;
+    font-size: 1.2em;
+    color: #293740;
+}
+
+.fecharForm {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    #mostrarForm {
+        margin-right: 90px;
+    }
+
+    .abrirPerfil {
+        display: flex;
+    }
+    .fecharForm {
+        display: flex;
+    }
+
+    header>section>ul>li>a {
+        color: #000;
+    }
+    
+    #graficoPizza {
+        width: 60%;
+        height: 60%;
+    }
+
+    .perfil-opcao {
+        width: 90%;
+        height: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 75px;
+        padding: 10px 0;
+        border-radius: 5px;
+        cursor:pointer;
+        /* color: black; */
+        background-color: #fcfcfc;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 10;
+    }
+
+    .perfil-opcao li {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .perfil-opcao li a {
+        display: block;
+        color: #000;
+    }
+
+    .perfil-opcao li:hover {
+        background-color: #e0e5e7;
+    }
+
+    .perfil:active .perfil-opcao {
+        display: block;
+    }
+
+}

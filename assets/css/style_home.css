@@ -1,0 +1,140 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background:#f7fbff;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Style Header */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    background-color: #0b59a8;
+    padding: 10px 100px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.logo-campus {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.busca {
+    background-color: #364853;
+}
+
+.perfil {
+    display: flex;
+    color: #fff;
+}
+
+.abrirPerfil {
+    display: none;
+}
+
+.perfil-opcao { 
+    list-style: none;
+}
+
+.perfil-opcao {
+    display: flex;
+    gap: 20px;
+}
+
+/* Style Gráfico */
+
+.grafico-aluno {
+    margin-top: 50px;
+}
+
+#graficoPizza {
+    width: 30%;
+    display: block; 
+    box-sizing: border-box; 
+}
+
+.titulo-grafico
+
+/* Tamanho letras do perfil */
+header>section>p {
+    font-size: 1em;
+}
+
+.perfil-botao {
+    font-size: 1em;
+}
+
+header>section>ul>li>a {
+    font-size: 1em;
+    color: #fff;
+}
+
+/* .fecharForm {
+    display: none;
+} */
+
+@media (max-width: 850px) {
+    /* .fecharForm {
+        display: flex;
+    } */
+    
+    #graficoPizza {
+        width: 60%;
+        height: 60%;
+    }
+    
+    .abrirPerfil {
+        display: flex;
+    }
+
+    header>section>ul>li>a {
+        color: #000;
+    }
+    
+
+    .perfil-opcao {
+        width: 90%;
+        height: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 75px;
+        padding: 10px 0;
+        border-radius: 5px;
+        cursor:pointer;
+        color: black;
+        background-color: #fcfcfc;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 10;
+    }
+
+    .perfil-opcao li {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .perfil-opcao li a {
+        display: block;
+    }
+
+    .perfil-opcao li:hover {
+        background-color: #e0e5e7;
+    }
+
+    .perfil:active .perfil-opcao {
+        display: block;
+    }
+}

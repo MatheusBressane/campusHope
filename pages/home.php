@@ -62,6 +62,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         </section>
     </header>   <!-- Fim Cabeçalho -->
 
+    <section>
+        <h1>Teste</h1>
+    </section>
+
     
     <div class="grafico-aluno">   <!-- Exibe o Gráfico -->
         <canvas id="graficoPizza"></canvas>
